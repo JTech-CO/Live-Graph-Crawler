@@ -1,0 +1,75 @@
+/* WordPress Theme Legacy Styles */
+
+/* Entry Styles */
+.entry {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 10px solid #666;
+}
+
+.entry-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-left: 3px;
+}
+
+.entry-content {
+  font-size: 15px;
+  line-height: 30px;
+  color: #444444;
+}
+
+.entry-meta {
+  font-size: 11px;
+  color: #999999;
+  margin-top: 10px;
+}
+
+/* Navigation Styles */
+.nav-box {
+  background-color: #2565d0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Data Table Styles */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table thead {
+  border-bottom: 3px solid #000;
+}
+
+.data-table tbody th {
+  background-color: rgba(136, 136, 136, 0.1);
+}
+
+/* Dark Box (Image Placeholder) */
+.dark-box {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 568px) {
+  .entry-title {
+    font-size: 15px;
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  .entry {
+    padding: 15px;
+  }
+}
