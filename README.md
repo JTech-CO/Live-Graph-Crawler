@@ -1,4 +1,4 @@
-# Live Graph Crawler - Frontend Only Version
+# Live Graph Crawler
 
 **버전**: 1.0  
 **작성일**: 2026년 1월 14일
@@ -119,6 +119,7 @@ Google Custom Search API는 CORS 제한이 있을 수 있습니다. 이 경우:
 ## 라이선스
 
 MIT License
+
 
 
 
