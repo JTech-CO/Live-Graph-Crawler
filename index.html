@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Graph Crawler</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/graph-theme.css">
+    <link rel="stylesheet" href="src/css/components.css">
+</head>
+
+<body>
+    <!-- API Key Modal -->
+    <div id="apiKeyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>API 키 설정</h2>
+                <button class="close-btn" onclick="closeApiKeyModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="geminiApiKey">Gemini API 키</label>
+                    <input type="password" id="geminiApiKey" placeholder="Gemini API 키를 입력하세요">
+                    <p class="help-text">
+                        <a href="https://aistudio.google.com/app/apikey" target="_blank"
+                            rel="noopener noreferrer">Google AI Studio에서 발급받기</a>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="modelSelect">Gemini 모델 선택</label>
+                    <select id="modelSelect">
+                        <option value="gemini-2.5-flash">Gemini 2.5 Flash (빠름)</option>
+                        <option value="gemini-2.5-pro">Gemini 2.5 Pro (정확함)</option>
+                    </select>
+                </div>
+                <div class="warning-box">
+                    <strong>보안 주의:</strong> API 키는 브라우저 로컬 스토리지에 저장되며, 이 컴퓨터에서만 사용됩니다. 공용 컴퓨터에서는 사용 후 삭제하세요.
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="saveApiKey()">저장</button>
+                    <button class="btn btn-secondary" onclick="clearApiKey()">삭제</button>
+                    <button class="btn btn-secondary" onclick="closeApiKeyModal()">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="site-title">Live Graph Crawler</h1>
+            <p class="site-description">AI 기반 실시간 그래프 검색 엔진</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <button class="nav-btn active">검색</button>
+            <button class="nav-btn" onclick="openApiKeyModal()">API 키 설정</button>
+        </nav>
+
+        <!-- API Key Warning -->
+        <div id="apiKeyWarning" class="api-warning" style="display: none;">
+            <div class="warning-content">
+                <span>Gemini API 키가 설정되지 않았습니다. 검색을 사용하려면 API 키를 입력해주세요.</span>
+                <button class="btn btn-small" onclick="openApiKeyModal()">API 키 설정</button>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-section">
+            <div class="search-header">
+                <span class="search-label">검색</span>
+                <span class="model-indicator" id="modelIndicator">Model: Gemini 2.5 Flash</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="예: 2024년 반도체 시장 점유율 그래프"
+                    onkeypress="handleSearchKeyPress(event)">
+                <button class="search-btn" onclick="performSearch()">검색</button>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="resultsSection">
+            <!-- Loading State -->
+            <div id="loadingState" style="display: none;">
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+                <div class="skeleton"></div>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-box" style="display: none;">
+                <p id="errorMessage"></p>
+            </div>
+
+            <!-- Results Container -->
+            <div id="resultsContainer"></div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <p>검색 결과가 없습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>

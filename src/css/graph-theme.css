@@ -1,0 +1,252 @@
+/* ===== Graph-Themed Design Elements ===== */
+
+/* Graph Paper Background */
+body {
+    background-image:
+        linear-gradient(rgba(37, 101, 208, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 101, 208, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: -1px -1px;
+}
+
+/* Coordinate Axes Decoration */
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to right, #2565d0 0%, rgba(37, 101, 208, 0.3) 100%);
+}
+
+.container::before {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    opacity: 0.2;
+}
+
+.container::after {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    opacity: 0.2;
+}
+
+.container {
+    position: relative;
+}
+
+/* Data Point Styled Elements */
+.result-card::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg, #2565d0 0%, #0066CC 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(37, 101, 208, 0.2);
+}
+
+/* Graph Line Inspired Borders */
+.search-bar input {
+    border-image: linear-gradient(to right,
+            #2565d0 0%,
+            #0066CC 50%,
+            #2565d0 100%) 1;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.search-bar input:focus {
+    border-image: linear-gradient(to right,
+            #0066CC 0%,
+            #2565d0 50%,
+            #0066CC 100%) 1;
+    box-shadow: 0 0 0 3px rgba(37, 101, 208, 0.1);
+}
+
+/* Chart-Inspired Result Cards */
+.result-card {
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(245, 250, 255, 1) 100%);
+    border-left: 4px solid;
+    border-image: linear-gradient(to bottom,
+            #2565d0 0%,
+            #0066CC 100%) 1;
+    position: relative;
+    overflow: visible;
+}
+
+/* Graph Color Palette for Reliability Badges */
+.reliability-high {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.reliability-medium {
+    background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+    color: #333;
+    box-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+
+.reliability-low {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+/* Animated Grid Lines on Hover */
+.result-card:hover {
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(240, 248, 255, 1) 100%);
+}
+
+.result-card:hover::before {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 3px rgba(37, 101, 208, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(37, 101, 208, 0.4);
+    }
+}
+
+/* Header with Graph Accent */
+.header {
+    border-bottom: 4px solid;
+    border-image: linear-gradient(to right,
+            transparent 0%,
+            #2565d0 20%,
+            #0066CC 50%,
+            #2565d0 80%,
+            transparent 100%) 1;
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: #2565d0;
+    border-radius: 2px;
+}
+
+/* Navigation with Data Visualization Colors */
+.navigation {
+    background: linear-gradient(135deg, #2565d0 0%, #1a4d9f 100%);
+    box-shadow:
+        0 4px 6px rgba(37, 101, 208, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+.nav-btn.active {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Button with Graph Gradient */
+.search-btn {
+    background: linear-gradient(135deg, #2565d0 0%, #0066CC 100%);
+    box-shadow: 0 4px 12px rgba(37, 101, 208, 0.3);
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background: linear-gradient(135deg, #1a4d9f 0%, #0052a3 100%);
+    box-shadow: 0 6px 16px rgba(37, 101, 208, 0.4);
+    transform: translateY(-2px);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(37, 101, 208, 0.3);
+}
+
+/* Loading Skeleton with Graph Pattern */
+.skeleton {
+    background: linear-gradient(90deg,
+            rgba(37, 101, 208, 0.05) 0%,
+            rgba(37, 101, 208, 0.1) 25%,
+            rgba(0, 102, 204, 0.1) 50%,
+            rgba(37, 101, 208, 0.1) 75%,
+            rgba(37, 101, 208, 0.05) 100%);
+    background-size: 200% 100%;
+    border-left: 4px solid rgba(37, 101, 208, 0.3);
+}
+
+/* Modal with Graph Accents */
+.modal-content {
+    border-top: 4px solid #2565d0;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(37, 101, 208, 0.1);
+}
+
+.modal-header {
+    background: linear-gradient(to bottom,
+            rgba(37, 101, 208, 0.03) 0%,
+            transparent 100%);
+}
+
+/* Form Inputs with Graph Theme */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2565d0;
+    box-shadow:
+        0 0 0 3px rgba(37, 101, 208, 0.1),
+        inset 0 1px 2px rgba(37, 101, 208, 0.05);
+}
+
+/* Site Title with Data Visualization Accent */
+.site-title {
+    background: linear-gradient(135deg, #2565d0 0%, #0066CC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+/* Responsive Graph Elements */
+@media (max-width: 568px) {
+    body {
+        background-size: 15px 15px;
+    }
+
+    .result-card::before {
+        width: 8px;
+        height: 8px;
+        left: -12px;
+    }
+}
