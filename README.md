@@ -5,6 +5,8 @@
 
 **[실행하기](<https://jtech-co.github.io/Live-Graph-Crawler/index.html>)**
 
+<img width="2560" height="1080" alt="image" src="https://i.imgur.com/Gt7dprg.png" /> 
+
 ## 개요
 
 **Live Graph Crawler**는 순수 HTML, CSS, JavaScript로 구축된 AI 기반 실시간 그래프 검색 엔진입니다. **Gemini API만 사용**하여 그래프와 통계 데이터가 포함된 신뢰할 수 있는 웹페이지를 찾아줍니다.
@@ -131,4 +133,5 @@ Live Graph Crawler - onlyF/
 
 
 MIT License
+
 
